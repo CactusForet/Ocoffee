@@ -1,4 +1,5 @@
-//import { pgPool } from "../config/pgPool.js";
+import pgPool  from "../config/pgPool.js";
+import * as dataMapper from "../dataMappers/dataMapper.js"
 
 //création méthode home
 export const home = async (req, res) => {
@@ -8,8 +9,9 @@ export const home = async (req, res) => {
 
 // création méthode catalog
 export const catalog = async (req, res) => {
+  const allCoffees = await dataMapper.getAllCoffees();
 
-  res.render("catalog");
+  res.render("catalog", { allCoffees });
 };
 
 // création méthode detail

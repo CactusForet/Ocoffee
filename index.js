@@ -1,6 +1,8 @@
 // TODO import des variables d'environnement 
 
-import 'dotenv/config';
+import dotenv from "dotenv";
+dotenv.config();
+
 import path from 'node:path';
 import express from 'express';
 //import session from 'express-session';
