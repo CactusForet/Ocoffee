@@ -1,0 +1,30 @@
+{
+  "name": "projet-s09-cactusforet",
+  "version": "1.0.0",
+  "description": "## Information du projet",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Tiramisu/Projet-S09-CactusForet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Tiramisu/Projet-S09-CactusForet/issues"
+  },
+  "homepage": "https://github.com/O-clock-Tiramisu/Projet-S09-CactusForet#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "pg": "^8.14.1"
+  }
+}

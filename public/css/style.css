@@ -1,0 +1,82 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Averia%20Serif%20Libre:700|Averia%20Serif%20Libre:400');
+
+body {
+  font-family: 'Averia Serif Libre';
+  font-weight: 400;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Cantarell:700|Cantarell:400');
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Cantarell';
+  font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
+
+/* Colors 
+--text: rgb(10, 9, 6);
+--background: rgb(251, 248, 244);
+--primary: rgb(208, 145, 61);
+--secondary: rgb(239, 188, 120);
+--accent: rgb(252, 177, 77);
+*/
+
+/*--text: rgb(5, 3, 21);
+--background: rgb(251, 251, 254);
+--primary: rgb(62, 30, 4);
+--secondary: rgb(247, 219, 185);
+--accent: rgb(67, 59, 255);
+*/
+
+/* header mobile*/
+
+@media screen and (max-width: 1024px) {
+  
+header {
+ max-height: 2rem;
+}
+
+.btn-img {
+  width: 2 rem;
+  height: auto;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+  .logo {
+  border: 2px solid red;
+  width: 10rem;
+  height: auto;
+  display: inline-block;
+}
+
+
+};
+
+/* header desktop */
+
+@media screen and (min-width: 1025px) {
+  header img {
+    width: 2rem;
+    height: auto;
+  }
+}
