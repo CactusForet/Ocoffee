@@ -1,14 +1,41 @@
 <%- include('./partials/header') %>
 
-//TODO illustration
+<main>
+  <section id="article">
+    <h1 style="background-image: url('/images/coffees/<%= coffee.reference %>.png')">
+      <%= coffee.name %>
+    </h1>
 
-<article>
-    <div>
-      <h2>page détail</h2>
-      <p>Origine Indonésie</p>
-      <p>25,99 €/kg</p>
-      <a class="button-outline" href="/catalog"> Catalogue </a>
-    </div>
-  </article>
+    <p><%= coffee.description %></p>
+
+    <table>
+      <tbody>
+        <tr>
+          <th>Origine</th>
+          <td><%= coffee.origin %></td>
+        </tr>
+        <tr>
+          <th>Caractéristique principale</th>
+          <td><%= coffee.distinctive_feature %></td>
+        </tr>
+        <tr>
+          <th>Prix au kg</th>
+          <td><%= coffee.price_per_kilo %> €</td>
+        </tr>
+        <tr>
+          <th>Disponible actuellement</th>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <th>Référence SKU du produit</th>
+          <td><%= coffee.reference %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="/catalog" class="button">Retour au catalogue</a>
+
+  </section>
+</main>
 
 <%- include('./partials/footer') %>

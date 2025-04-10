@@ -8,7 +8,16 @@ export const dataMapper = {
            const { rows } = await pgPool.query("SELECT * FROM coffee");
            return rows;
         } catch (error) {
-            throw error('erreur bdd getAllCoffee');
+            throw new Error('erreur bdd getAllCoffee');
         }
-    }
+    },
+
+    async getCoffeeById(id){
+        try {
+            const { rows } = await pgPool.query("SELECT * FROM coffee WHERE id = $1", [id]);
+            return rows[0];
+        } catch (error) {
+            throw new Error('erreur bdd getCoffeeById');
+        }
+    },
 };

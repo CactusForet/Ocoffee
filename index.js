@@ -18,6 +18,9 @@ app.set("view engine", "ejs");
 app.set("views", path.join(import.meta.dirname, "app", "views"));
 app.use(express.static(path.join(import.meta.dirname, "public")));
 
+// Favicon static route
+app.use("/favicon.ico", express.static("./public/images/logo.svg"));
+
 app.use(router);
 
 app.listen(process.env.PORT, () => {
