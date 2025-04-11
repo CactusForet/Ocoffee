@@ -22,7 +22,10 @@ export const details = async (req, res) => {
     return res.status(404).render('404');
   }
 
-  res.render("details", { coffee }); // Passer l'object coffee au template
+  // Passe l'ID du café à availability()
+  const availability = await dataMapper.availability(coffeeId);
+  console.log("Dans le controller, availability:", availability);
+  res.render("details", { coffee, availability }); // Passe coffee et availability dans un objet au template
 }; 
 
 //création méthode boutique

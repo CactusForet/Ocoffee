@@ -23,8 +23,13 @@
           <td><%= coffee.price_per_kilo %> €</td>
         </tr>
         <tr>
-          <th>Disponible actuellement</th>
-          <td>✅</td>
+          <% if (typeof availability !== 'undefined' && availability && availability.available) { %>
+            <th>Disponible actuellement</th>
+            <td>✅</td>
+          <% } else { %>
+            <th>Indisponible</th>
+            <td>❌</td> 
+          <% } %>
         </tr>
         <tr>
           <th>Référence SKU du produit</th>
