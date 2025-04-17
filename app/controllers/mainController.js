@@ -2,15 +2,31 @@ import { dataMapper } from "../dataMappers/dataMapper.js"
 
 //création méthode home
 export const home = async (req, res) => {
+  const showThreeCoffees = await dataMapper.getLimitedCoffees();
 
-  res.render("homePage");
+  res.render("homePage", { showThreeCoffees } );
 };
 
 // création méthode catalog
 export const catalog = async (req, res) => {
-  const allCoffees = await dataMapper.getAllCoffees();
-
-  res.render("catalog", { allCoffees });
+  try {
+    // Vérifier si on demande tous les cafés ou juste les 3 premiers
+    const showAll = req.query.showAll === 'true';
+    
+    // Récupérer les cafés selon le paramètre
+    const coffees = showAll 
+      ? await dataMapper.getAllCoffees()
+      : await dataMapper.getLimitedCoffees();
+    
+    // Passer les cafés et l'état d'affichage à la vue
+    res.render("catalog", { 
+      coffees, 
+      showAll 
+    });
+  } catch (error) {
+    console.error('Erreur catalog:', error);
+    res.status(500).render('error');
+  }
 };
 
 // création méthode detail

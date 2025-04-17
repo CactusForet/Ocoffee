@@ -23,6 +23,11 @@ app.use("/favicon.ico", express.static("./public/images/logo.svg"));
 
 app.use(router);
 
+// Middleware pour les routes non trouvées 
+app.use((req, res, next) => {
+  res.status(404).send('Page non trouvée');
+});
+
 app.listen(process.env.PORT, () => {
   console.log(`app listening on port ${process.env.PORT}`)
 })

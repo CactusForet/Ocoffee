@@ -13,38 +13,21 @@
     <section id="latest-products">
       <h2>Nouveautés</h2>
       
-      <ul>
-        <li>
+      
           <article>
-            <img src="../images/coffees/100955890.png" alt="Ethiopian Yirgacheffe">
-            <div>
-              <h3>Ethiopian Yirgacheffe</h3>
-              <a class="button-outline" href="#">Voir le détail</a>
+            <div class="coffee-list">
+              <% showThreeCoffees.forEach(coffee => { %>
+                <img src="../images/coffees/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
+                <div class="coffee-card">
+                  <h3><%= coffee.name %></h3>
+                  <p><%= coffee.description %></p>
+                  <p>Prix au kilo : <%= coffee.price_per_kilo %>€</p>
+                  <a class="button-outline" href="/catalog/detail/<%= coffee.id%>">Voir le détail</a>
+                </div>
+              <% }); %>
             </div>
           </article>
-        </li>
-
-        <li>
-          <article>
-            <img src="../images/coffees/100955890.png" alt="Ethiopian Yirgacheffe">
-            <div>
-              <h3>Ethiopian Yirgacheffe</h3>
-              <a class="button-outline" href="#">Voir le détail</a>
-            </div>
-          </article>
-        </li>
-
-        <li>
-          <article>
-            <img src="../images/coffees/100955890.png" alt="Ethiopian Yirgacheffe">
-            <div>
-              <h3>Ethiopian Yirgacheffe</h3>
-              <a class="button-outline" href="#">Voir le détail</a>
-            </div>
-          </article>
-        </li>
-
-      </ul>
+          
     </section>
 
   </main>

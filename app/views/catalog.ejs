@@ -3,23 +3,24 @@
     <section id="catalog">
       <h1>Notre catalogue</h1>
 
-      <div class="articles only-display-3-articles" id="articles-list">
-        <article>
-          <% allCoffees.forEach(coffee => { %>
-          <img src="../images/coffees/<%= coffee.reference %>.png" alt="<%= coffee.name %>">
-          <div>
-            <h2> <%= coffee.name %> </h2>
-            <p>Origine <%= coffee.origin %></p>
-            <p><%= coffee.price_per_kilo %> €/kg</p>
-            <a class="button-outline" href="/catalog/detail/<%= coffee.id %>">Voir le détail</a>
+      <div class="coffee-list">
+        <% coffees.forEach(coffee => { %>
+          <div class="coffee-card">
+            <h3><%= coffee.name %></h3>
+            <p><%= coffee.description %></p>
+            <p>Prix au kilo : <%= coffee.price_per_kilo %>€</p>
+            <a class="button-outline" href="/catalog/detail/<%= coffee.id%>">Voir le détail</a>
           </div>
         <% }); %>
-        </article>
-
-        
       </div>
+      
+      <!-- Afficher le bouton seulement si on ne montre pas déjà tous les cafés -->
+      <% if (!showAll) { %>
+        <a href="/catalog?showAll=true" class="button" id="see-all-products-button">Voir tous les cafés</a>
+      <% } else { %>
+        <a href="/catalog" class="btn">Voir moins</a>
+      <% } %>
 
-      <button class="button" id="see-all-products-button">Voir tous les produits</button>
     </section>
 
   </main>
